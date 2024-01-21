@@ -39,7 +39,7 @@ if select == "House Price Prediction":
        """
     st.markdown(title_html, unsafe_allow_html=True)
 
-    house = pd.read_csv(r"dataset\House Price India.csv")
+    house = pd.read_csv(r"dataset/House Price India.csv")
 
     x = house.drop(columns=["id", "Date", 'condition of the house', 'Area of the house(excluding basement)', 'Area of the basement',
                             'Postal Code', 'Lattitude', 'Longitude', 'living_area_renov', 'lot_area_renov', 'Price'], axis=1)
@@ -126,7 +126,7 @@ if select == "Salary Prediction":
     st.markdown(title_html, unsafe_allow_html=True)
 
     # Rest of your Streamlit app code
-    salary = pd.read_csv(r"dataset\Salary Data.csv")
+    salary = pd.read_csv(r"dataset/Salary Data.csv")
     salary.dropna(inplace=True)
     salary.replace({"Gender": {"Male": 0, "Female": 1}}, inplace=True)
     salary.replace({"Education Level": {"Bachelor's": 0, "Master's": 1, "PhD": 2}}, inplace=True)
@@ -203,7 +203,7 @@ if select == "Loan Prediction":
         </div>
     """
     st.markdown(title_html, unsafe_allow_html=True)
-    loan = pd.read_csv(r"dataset\train_u6lujuX_CVtuZ9i (1).csv")
+    loan = pd.read_csv(r"dataset/train_u6lujuX_CVtuZ9i (1).csv")
     loan.dropna(inplace=True)
     loan.replace({"Gender": {"Male": 0, "Female": 1}}, inplace=True)
     loan.replace({"Married": {"Yes": 1, "No": 1}}, inplace=True)
@@ -295,7 +295,7 @@ if select == "Car Price Prediction":
         </div>
     """
     st.markdown(title_html, unsafe_allow_html=True)
-    car = pd.read_csv(r"dataset\car data.csv")
+    car = pd.read_csv(r"dataset/car data.csv")
     le = LabelEncoder()
     car["Fuel_Type"] = le.fit_transform(car["Fuel_Type"])
     car["Transmission"] = le.fit_transform(car["Transmission"])
